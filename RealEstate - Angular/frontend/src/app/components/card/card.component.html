@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row">
+
+    <div class="box" *ngFor="let listing of listings">
+      <div class="top">
+        <img src="https://cdn.pixabay.com/photo/2014/07/10/17/18/large-home-389271__340.jpg" alt="" />
+        <button (click)="deleteListing(listing.id)" class="btn btn-danger deletebtn" type="submit"><i
+            class="fa fa-trash"></i></button>
+        <button (click)="updateListing(listing.id)" class="btn btn-success updatebtn" type="submit"><i
+            class="fa fa-edit"></i></button>
+      </div>
+      <div class="bottom">
+        <h2>{{listing.name}}</h2>
+        <p>
+          {{listing.categorieId}}
+        </p>
+        <div class="advants">
+          <div>
+            <span>Bedrooms</span>
+            <div><i class="fas fa-th-large"></i><span>{{listing.beds}}</span></div>
+          </div>
+          <div>
+            <span>Bathrooms</span>
+            <div><i class="fas fa-shower"></i><span>{{listing.baths}}</span></div>
+          </div>
+          <div>
+
+            <span>Area</span>
+            <div>
+              <i class="fas fa-vector-square"></i><span>{{listing.m2}}<span>m²</span></span>
+            </div>
+          </div>
+        </div>
+        <div class="price">
+          <span>For Sale</span>
+          <span>{{listing.price}} DH</span>
+          <button (click)="listingDetails(listing.id)" class="btn btn-success" type="submit">View More </button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
